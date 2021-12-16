@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Route, NavLink } from "react-router-dom";
 
-import CharacterCard from './CharacterCard';
+//import CharacterCard from './CharacterCard';
 import Home from './Home';
 
 function App() {
@@ -29,9 +29,9 @@ function App() {
       <Route path='/'>
         <Home />
       </Route>
-      <Route path='/kaede-akamatsu'>
+      {/* <Route path='/kaede-akamatsu'>
         <CharacterCard/>
-      </Route>
+      </Route> */}
     </div>
   );
 }
