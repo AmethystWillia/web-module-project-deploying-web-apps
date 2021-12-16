@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import { Route, NavLink } from "react-router-dom";
+import { Route, Routes, NavLink } from "react-router-dom";
 
-//import CharacterCard from './CharacterCard';
+import CharacterCard from './CharacterCard';
 import Home from './Home';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <header>
         <h1>DanganRonpa V3 Cast</h1>
         <nav>
-          <NavLink to='/kaede-akamatsu'>Kaede Akamatsu</NavLink>
+          <NavLink to='/test'>Kaede Akamatsu</NavLink>
           <NavLink to='/shuichi-saihara'>Shuichi Saihara</NavLink>
           <NavLink to='/miu-iruma'>Miu Iruma</NavLink>
           <NavLink to='/angie-yonaga'>Angie Yonaga</NavLink>
@@ -26,12 +26,10 @@ function App() {
         </nav>
       </header>
       
-      <Route path='/'>
-        <Home />
-      </Route>
-      {/* <Route path='/kaede-akamatsu'>
-        <CharacterCard/>
-      </Route> */}
+      <Routes>
+        <Route path='/test' element={<CharacterCard/>} />
+        <Route path='/' element={<Home/>} />
+      </Routes>
     </div>
   );
 }
