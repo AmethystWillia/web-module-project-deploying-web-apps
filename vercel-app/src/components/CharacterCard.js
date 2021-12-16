@@ -1,48 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import data from './data';
+import { useParams } from 'react-router-dom';
 
 const CharacterCard = () => {
+    const { id } = useParams();
+    const [chara, setChara] = useState({});
+    //const navigate = useNavigate();
+
+    useEffect(() => {
+        setChara(data.filter(chara => chara.id === id)[0]);
+    }, [id]);
+
     return (
         <div className='char-card'>
-            <header className='char-select'>
-                <nav>
-                    <p>Thing go here</p>
-                </nav>
-                <h1>Character Name</h1>
-                <h2>Ultimate Talent</h2>
-            </header>
+           <div className='char-intro'>
+                <h1>{chara.name}</h1>
+                <h2>Ultimate {chara.talent}</h2>
+            </div>
             <div className='char-info'>
                 <div className='char-traits'>
                     <div className='physical-traits'>
                     <ul>
-                        <li>Height:</li>
-                        <li>Weight:</li>
-                        <li>Gender:</li>
-                        <li>Blood Type:</li>
+                        <li><b>Height:</b> {chara.height}</li>
+                        <li><b>Weight:</b> {chara.weight}</li>
+                        <li><b>Gender:</b> {chara.gender}</li>
+                        <li><b>Blood Type:</b> {chara.blood}</li>
                     </ul>
                     </div>
                     <div className='other-traits'>
                     <ul>
-                        <li>Date of Birth:</li>
-                        <li>Likes:</li>
-                        <li>Dislikes:</li>
-                        <li>Quote:</li>
+                        <li><b>Date of Birth: {chara.dob}</b></li>
+                        <li><b>Likes:</b> {chara.likes}</li>
+                        <li><b>Dislikes:</b> {chara.dislikes}</li>
+                        <li><b>Quote:</b> "{chara.quote}"</li>
                     </ul>
                     </div>
                 </div>
                 <div className='char-bio'>
-                    <div className='backstory'>
-                        Blah blah blah
-                    </div>
-                    <div className='triva'>
-                        <ul>
-                            <li>Thing!</li>
-                            <li>Thing!</li>
-                            <li>Thing!</li>
-                        </ul>
-                    </div>
+                    <p>{chara.bio}</p>
                 </div>
                 <div className='char-pic'>
-                    <img src='https://upload.wikimedia.org/wikipedia/en/9/95/Test_image.jpg' alt='this is a test'/>
+                    <img src={chara.img} alt={`${chara.name}'s official art`}/>
                 </div>
             </div>
         </div>
