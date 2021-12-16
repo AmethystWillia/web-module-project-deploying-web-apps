@@ -5,7 +5,7 @@ const CharacterCard = () => {
         <div className='char-card'>
             <header className='char-select'>
                 <nav>
-                    <a href='#'>Thing go here</a>
+                    <p>Thing go here</p>
                 </nav>
                 <h1>Character Name</h1>
                 <h2>Ultimate Talent</h2>
