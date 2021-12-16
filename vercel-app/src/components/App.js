@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
 import { Route, NavLink } from "react-router-dom";
+
 import CharacterCard from './CharacterCard';
+import Home from './Home';
 
 function App() {
   return (
@@ -23,10 +25,10 @@ function App() {
           <NavLink to='/himiko-yumeno'>Himiko Yumeno</NavLink>
         </nav>
       </header>
-      <div>
-        <h2>This is my trash fandom</h2>
-        <p>Sorry not sorry.</p>
-      </div>
+      
+      <Route path='/'>
+        <Home />
+      </Route>
       <Route path='/kaede-akamatsu'>
         <CharacterCard/>
       </Route>
