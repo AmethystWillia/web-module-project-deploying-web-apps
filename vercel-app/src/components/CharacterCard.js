@@ -42,7 +42,7 @@ const CharacterCard = () => {
                     </div>
                 </div>
                 <div className='char-pic'>
-                    <img src='https://upload.wikimedia.org/wikipedia/en/9/95/Test_image.jpg' alt='this is a test image'/>
+                    <img src='https://upload.wikimedia.org/wikipedia/en/9/95/Test_image.jpg' alt='this is a test'/>
                 </div>
             </div>
         </div>
